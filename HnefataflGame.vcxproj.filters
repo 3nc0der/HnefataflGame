@@ -27,9 +27,18 @@
     <ClInclude Include="BoardController.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="HnefataflBoard.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HnefataflBoard.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
