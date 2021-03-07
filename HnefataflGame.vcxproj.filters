@@ -30,6 +30,9 @@
     <ClInclude Include="HnefataflBoard.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="ReturnCodes.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp">

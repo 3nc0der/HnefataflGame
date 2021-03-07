@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="BoardController.h" />
+    <ClInclude Include="ReturnCodes.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="HnefataflBoard.h" />
     <ClInclude Include="Player.h" />
