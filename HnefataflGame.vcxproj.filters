@@ -24,5 +24,13 @@
     <ClInclude Include="GameState.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="BoardController.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BoardController.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
