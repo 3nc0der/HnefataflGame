@@ -1,13 +1,21 @@
 #pragma once
 
+/// <summary>
+/// A class for the controller of the board.
+/// The instance can be used to execute moves on the game instance and to update the view.
+/// </summary>
 class BoardController
 {
 	public:
 
-		// Creates a new BoardController instance, which is used to make changes to the game instance and to update the View.
+		/// <summary>
+		/// Creates a new BoardController instance.
+		/// </summary>
 		BoardController();
 
-		// Deletes the BoardController instance and frees the memory allocated by this instance.
+		/// <summary>
+		/// Deletes this BoardController instance.
+		/// </summary>
 		~BoardController();
 
 
