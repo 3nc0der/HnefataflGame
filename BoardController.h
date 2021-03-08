@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Observer.h"
+#include "HnefataflBoard.h"
 
 /// <summary>
 /// A class for the controller of the board.
@@ -24,5 +25,12 @@ public:
 	/// Implements what happens when the observed classes notify this observer.
 	/// </summary>
 	void update();
+
+private:
+
+	/// <summary>
+	/// The instance of the game.
+	/// </summary>
+	HnefataflBoard *game;
 };
 
