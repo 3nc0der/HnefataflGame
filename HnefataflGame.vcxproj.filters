@@ -51,6 +51,12 @@
     <ClInclude Include="Positioning.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStructs.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp">
@@ -69,6 +75,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Piece.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,7 +2,14 @@
 
 RESULT Piece::moveTo(Tile dest)
 {
-	tile = dest;
+	RESULT res = Utils::validateTile(dest);
+
+	if (res == RESULT::OK)
+	{
+		tile = dest;
+	}
+	
+	return res;
 }
 
 Tile Piece::getPosition()

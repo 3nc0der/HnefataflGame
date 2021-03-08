@@ -12,11 +12,6 @@ class Board
 public:
 
 	/// <summary>
-	/// The size of the game board in rows/columns.
-	/// </summary>
-	static const int SIZE = 11;
-
-	/// <summary>
 	/// Executes a human move.
 	/// Creates a new copy of the board on which the move will be executed.
 	/// </summary>
