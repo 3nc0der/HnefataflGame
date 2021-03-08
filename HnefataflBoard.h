@@ -28,7 +28,7 @@ class HnefataflBoard : public Board
 		/// <param name="rowTo">The row the piece to be moved will be moved to.</param>
 		/// <param name="colTo">The column the piece to be moved will be moved to.</param>
 		/// <returns>A new Board instance with the given move made.</returns>
-		Board move(int rowFrom, int colFrom, int rowTo, int colTo);
+		Board move(Move move);
 
 		/// <summary>
 		/// Executes a machine move.
