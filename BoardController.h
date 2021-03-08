@@ -20,6 +20,9 @@ public:
 	/// </summary>
 	~BoardController();
 
-
+	/// <summary>
+	/// Implements what happens when the observed classes notify this observer.
+	/// </summary>
+	void update();
 };
 
