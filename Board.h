@@ -20,20 +20,20 @@ public:
 	/// <param name="rowTo">The row the piece to be moved will be moved to.</param>
 	/// <param name="colTo">The column the piece to be moved will be moved to.</param>
 	/// <returns>A new Board instance with the given move made.</returns>
-	virtual Board move(Move move) = 0;
+	virtual Board* move(Move move) = 0;
 
 	/// <summary>
 	/// Executes a machine move.
 	/// Creates a new copy of the board on which the move will be executed.
 	/// </summary>
 	/// <returns>A new Board instance with the move made the machine determined to be the best.</returns>
-	virtual Board machineMove() = 0;
+	virtual Board* machineMove() = 0;
 
 	/// <summary>
 	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
 	/// </summary>
 	/// <returns>The reseted board.</returns>
-	virtual Board undo() = 0;
+	virtual Board* undo() = 0;
 
 	/// <summary>
 	/// Sets the machine level to the given value.
@@ -71,4 +71,40 @@ public:
 	/// </summary>
 	/// <param name="gameState">The new game state the game shall be in.</param>
 	virtual void setGameState(GameState gameState) = 0;
+
+	/// <summary>
+	/// Getter for the machine pieces list. Note that you will receive a pointer to the list.
+	/// </summary>
+	/// <returns>A pointer to the machine pieces list.</returns>
+	virtual list<Piece>* getMachinePieces() = 0;
+
+	/// <summary>
+	/// Getter for the human pieces list. Note that you will receive a pointer to the list.
+	/// </summary>
+	/// <returns>A pointer to the human pieces list.</returns>
+	virtual list<Piece> getHumanPieces() = 0;
+
+	/// <summary>
+	/// Getter for the machines color.
+	/// </summary>
+	/// <returns>The machines color.</returns>
+	virtual const Color getMachineColor() = 0;
+
+	/// <summary>
+	/// Getter for the humans color.
+	/// </summary>
+	/// <returns>The humans color.</returns>
+	virtual const Color getHumanColor() = 0;
+
+	/// <summary>
+	/// Getter for the current player.
+	/// </summary>
+	/// <returns>The player who's turn it is.</returns>
+	virtual Player getCurrentPlayer() = 0;
+
+	/// <summary>
+	/// Getter for the next player.
+	/// </summary>
+	/// <returns>The player who's turn it will be next turn.</returns>
+	virtual Player getNextPlayer() = 0;
 };
