@@ -2,22 +2,7 @@
 
 #include "Player.h"
 #include "GameState.h"
-
-/// <summary>
-/// A struct for a single move.
-/// </summary>
-struct Move
-{
-	/// <summary>
-	/// The row the piece currently stands on and the row the piece shall be moved to.
-	/// </summary>
-	unsigned short rowFrom, rowTo;
-
-	/// <summary>
-	/// The column the piece currently stands on and the column the piece shall be moved to.
-	/// </summary>
-	unsigned short colFrom, colTo;
-};
+#include "Piece.h"
 
 /// <summary>
 /// A fully virtual class, that can be used to communicate with instances of the game.

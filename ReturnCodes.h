@@ -4,7 +4,7 @@
 /// An enum class for ReturnCodes.
 /// Will be used for all functions, which are usually void.
 /// </summary>
-enum class ReturnCodes
+typedef enum class ReturnCodes
 {
 	/// <summary>
 	/// Return this if there is no error.
@@ -26,4 +26,4 @@ enum class ReturnCodes
 	/// Doesn't mean the user is responsible for the invalid argument.
 	/// </summary>
 	INVALID_ARGUMENT = 3
-};
+}RESULT;

@@ -42,6 +42,15 @@
     <ClInclude Include="Color.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Piece.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="TileType.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Positioning.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp">
@@ -57,6 +66,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Observer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Piece.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
