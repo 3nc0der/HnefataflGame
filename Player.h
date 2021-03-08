@@ -6,14 +6,14 @@
 enum class Player
 {
 	/// <summary>
-	/// The white player.
+	/// The human player.
 	/// </summary>
-	WHITE = 0,
+	HUMAN = 0,
 
 	/// <summary>
-	/// The black player.
+	/// The machine player.
 	/// </summary>
-	BLACK = 1,
+	MACHINE = 1,
 
 	/// <summary>
 	/// No player.

@@ -3,6 +3,10 @@
 #include "Board.h"
 #include "Observable.h"
 
+#include <stack>
+
+using namespace std;
+
 /// <summary>
 /// A class for the game itself.
 /// An instance of this class represents an active instance of the game.
@@ -38,11 +42,23 @@ public:
 	Board machineMove();
 
 	/// <summary>
+	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
+	/// </summary>
+	/// <returns>The reseted board.</returns>
+	Board undo();
+
+	/// <summary>
 	/// Sets the machine level to the given value.
 	/// This value describes how many moves the machine will calculate into the future.
 	/// </summary>
 	/// <param name="level">The value the machine level should be set to.</param>
 	void setMachineDifficulty(int level);
+
+	/// <summary>
+	/// Getter for the machine difficulty; i. e. the maximum depth of the game tree.
+	/// </summary>
+	/// <returns>The value of the machine level.</returns>
+	int getMachineDifficulty();
 
 	/// <summary>
 	/// A getter for the player who won.
@@ -61,5 +77,30 @@ public:
 	/// </summary>
 	/// <returns>The game state currently set.</returns>
 	GameState getGameState();
+
+	/// <summary>
+	/// Sets the given game state.
+	/// </summary>
+	/// <param name="gameState">The new game state the game shall be in.</param>
+	void setGameState(GameState gameState);
+
+private:
+
+	/// <summary>
+	/// The current state of the game.
+	/// </summary>
+	GameState gameState;
+
+	/// <summary>
+	/// The player that moves on this instance.
+	/// And the player that moves on the instance derived from this one.
+	/// </summary>
+	Player currentPlayer, nextPlayer;
+
+	/// <summary>
+	/// Every human move is added to the stack.
+	/// This is used to implement the undo functionality.
+	/// </summary>
+	stack<Board> moveStack;
 };
 
