@@ -21,6 +21,12 @@ public:
 	HnefataflBoard();
 
 	/// <summary>
+	/// Deep clones the given board and creates a new copy of the same board by that.
+	/// </summary>
+	/// <param name="hb">The board instance to copy from.</param>
+	HnefataflBoard(HnefataflBoard& hb);
+
+	/// <summary>
 	/// Deletes this instance of an Hnefatafl game.
 	/// </summary>
 	~HnefataflBoard();
@@ -94,7 +100,7 @@ public:
 	/// Getter for the human pieces list. Note that you will receive a pointer to the list.
 	/// </summary>
 	/// <returns>A pointer to the human pieces list.</returns>
-	list<Piece> getHumanPieces();
+	list<Piece>* getHumanPieces();
 
 	/// <summary>
 	/// Getter for the machines color.

@@ -4,6 +4,8 @@
 #include "GameState.h"
 #include "Piece.h"
 
+#include <list>
+
 /// <summary>
 /// A fully virtual class, that can be used to communicate with instances of the game.
 /// </summary>
@@ -76,13 +78,13 @@ public:
 	/// Getter for the machine pieces list. Note that you will receive a pointer to the list.
 	/// </summary>
 	/// <returns>A pointer to the machine pieces list.</returns>
-	virtual list<Piece>* getMachinePieces() = 0;
+	virtual std::list<Piece>* getMachinePieces() = 0;
 
 	/// <summary>
 	/// Getter for the human pieces list. Note that you will receive a pointer to the list.
 	/// </summary>
 	/// <returns>A pointer to the human pieces list.</returns>
-	virtual list<Piece> getHumanPieces() = 0;
+	virtual std::list<Piece>* getHumanPieces() = 0;
 
 	/// <summary>
 	/// Getter for the machines color.
