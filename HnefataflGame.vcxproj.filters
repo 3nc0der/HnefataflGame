@@ -39,6 +39,9 @@
     <ClInclude Include="Observable.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp">
