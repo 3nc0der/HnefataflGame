@@ -143,6 +143,8 @@
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="BoardController.h" />
+    <ClInclude Include="Observable.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="ReturnCodes.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="HnefataflBoard.h" />
@@ -152,6 +154,8 @@
     <ClCompile Include="BoardController.cpp" />
     <ClCompile Include="HnefataflBoard.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Observable.cpp" />
+    <ClCompile Include="Observer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
