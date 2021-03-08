@@ -12,7 +12,7 @@ enum class ReturnCodes
 	OK = 0,
 
 	/// <summary>
-	/// Return this if there is an internal error, that occured in the program, whithout human input.
+	/// Return this if there is an internal error, that occurred in the program, without human input.
 	/// </summary>
 	ERROR = 1,
 
@@ -23,7 +23,7 @@ enum class ReturnCodes
 
 	/// <summary>
 	/// Return this if there is an error because of an invalid parameter.
-	/// Doesn`t mean the user is responsible for the invalid argument.
+	/// Doesn't mean the user is responsible for the invalid argument.
 	/// </summary>
 	INVALID_ARGUMENT = 3
 };

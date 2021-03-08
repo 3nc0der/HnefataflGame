@@ -2,7 +2,7 @@
 
 /// <summary>
 /// An enum class for the state of the game.
-/// Is updated everytime the game state may changeand can be used to determine how the game behaves in different states.
+/// Is updated every time the game state may change and can be used to determine how the game behaves in different states.
 /// </summary>
 typedef enum class GameState
 {
