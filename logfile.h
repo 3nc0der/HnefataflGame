@@ -67,41 +67,88 @@ public:
 	/// <param name="critical">Set to true if the message is critical.</param>
 	void writeToLog(const char* text, log_color color, bool critical);
 
-	//give the wanted color like this "RGB" aka "FF00FF"
+	/// <summary>
+	/// Writes the text to the log with a custom color.
+	/// </summary>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="color">A string describing the custom color. e.g. for blue type "0000FF"</param>
 	void writeToLog(const char* text, const char* color);
 
-	//if the message is critical it will be visible in the log
+	/// <summary>
+	/// Writes the text to the log with a custom color.
+	/// Adds a specially marked line to the log, as the message is critical and should be seen quickly.
+	/// </summary>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="color">A string describing the custom color. e.g. for blue type "0000FF"</param>
+	/// <param name="critical">Set to true if the message is critical.</param>
 	void writeToLog(const char* text, const char* color, bool critical);
 
-	//basic writetolog formatted function
+	/// <summary>
+	/// The basic logging function for formatted text.
+	/// </summary>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="">The parameter list with all the values present in the string.</param>
 	void writeToLogf(const char* text, ...);
 
-	//use one of the predefined colors
+	/// <summary>
+	/// Logs a formatted text with a predefined color.
+	/// </summary>
+	/// <param name="color">A member of the LOG_COLOR enum.</param>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="">The parameter list with all the values present in the string.</param>
 	void writeToLogf(log_color color, const char* text, ...);
 
-	//if the message is critical it will be visible in the log
+	/// <summary>
+	/// Adds a specially marked line to the log, as the message is critical and should be seen quickly.
+	/// </summary>
+	/// <param name="color">A member of the LOG_COLOR enum.</param>
+	/// <param name="critical">Set to true if the message is critical.</param>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="">The parameter list with all the values present in the string.</param>
 	void writeToLogf(log_color color, bool critical, const char* text, ...);
 
-	//give the color like this "RGB" aka "FF00FF"
+	/// <summary>
+	/// Writes formatted text to the log with a custom color.
+	/// </summary>
+	/// <param name="color">A string describing the custom color. e.g. for blue type "0000FF"</param>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="">The parameter list with all the values present in the string.</param>
 	void writeToLogf(const char* color, const char* text, ...);
 
-	//if the message is critical it will be visible in the log
+	/// <summary>
+	/// Writes formatted text to the log with a custom color.
+	/// Adds a specially marked line to the log, as the message is critical and should be seen quickly.
+	/// </summary>
+	/// <param name="color">A string describing the custom color. e.g. for blue type "0000FF"</param>
+	/// <param name="critical">Set to true if the message is critical.</param>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="">The parameter list with all the values present in the string.</param>
 	void writeToLogf(const char* color, bool critical, const char* text, ...);
 
 private:
 
-	//file variable
+	/// <summary>
+	/// The file.
+	/// </summary>
 	FILE *log;
 
-	//holds current log file name
+	/// <summary>
+	/// The name of this log file.
+	/// </summary>
 	const char* logName = "logfile.html";
 
-	//holds the last string that was written to log
+	/// <summary>
+	/// The last string that has been written to the log file.
+	/// </summary>
 	string lastString = "";
 
-	//holds amount of last string written
+	/// <summary>
+	/// How many times the last string was written.
+	/// </summary>
 	int timesLastStringWritten = 0;
 
-	//tells whether the write lock is active or not
+	/// <summary>
+	/// Tells whether the write lock is active or not.
+	/// </summary>
 	bool writeLock = false;
 };
