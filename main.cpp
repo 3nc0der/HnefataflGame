@@ -1,3 +1,5 @@
+#include "Shell.h"
+
 /// <summary>
 /// The main method of the program.
 /// </summary>
