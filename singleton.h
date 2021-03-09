@@ -1,36 +1,49 @@
 #pragma once
 
-//singleton class to make sure only one instance of a certain class exists
+/// <summary>
+/// A singleton class to make sure the inheriting classes only have one instance at a time.
+/// </summary>
+/// <typeparam name="T">The class you want to connect the singleton with.</typeparam>
 template <class T>
 class singleton
 {
 protected:
 	
-	//holds the instance
-	static T* m_singleton;
+	/// <summary>
+	/// Holds the instance.
+	/// </summary>
+	static T* singletonInstance;
 
 public:
 
-	virtual ~singleton() {};
+	virtual ~singletonInstance() {};
 
-	//returns the instance and creates a new one if no exists
+	/// <summary>
+	/// Returns the one instance of the class if already existing.
+	/// If the function is called, while no instance exists, there will be created a new one and immediately returned.
+	/// </summary>
+	/// <returns>The instance of the class.</returns>
 	inline static T* get()
 	{
-		if (!m_singleton)
+		if (!singletonInstance)
 		{
-			m_singleton = new T();
+			singletonInstance = new T();
 		}
 
-		return m_singleton;
+		return singletonInstance;
 	}
 
-	//safe deletes the instance
+	/// <summary>
+	/// Safely deletes the instance.
+	/// This should be called if the instance is no longer needed.
+	/// E.g. in the destructor of the class.
+	/// </summary>
 	inline static void del()
 	{
-		if (m_singleton)
+		if (singletonInstance)
 		{
-			delete m_singleton;
-			m_singleton = nullptr;
+			delete singletonInstance;
+			singletonInstance = nullptr;
 		}
 
 		return;
@@ -38,4 +51,4 @@ public:
 };
 
 template <class T>
-T* singleton<T>::m_singleton = 0;
+T* singleton<T>::singletonInstance = 0;

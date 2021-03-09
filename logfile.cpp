@@ -1,4 +1,4 @@
-#include "logfile.hpp"
+#include "logfile.h"
 
 logfile::logfile()
 {
@@ -63,7 +63,7 @@ void logfile::writeToLog(const char* text, log_color color, bool critical)
 				//if not write message to log that a string was limited to a certain amount of times
 				fprintf_s(log, "<p style=\"color:#FF0000;\">The following string has been limited due to too frequently usage: %s</p><br/>", text);
 
-				//force logfile to write information
+				//force log file to write information
 				fflush(log);
 
 				//set the write lock
@@ -151,7 +151,7 @@ void logfile::writeToLog(const char* text, log_color color, bool critical)
 	//end the html paragraph and add a line break
 	fprintf_s(log, "</p><br/>");
 
-	//force logfile to write information
+	//force log file to write information
 	fflush(log);
 }
 
@@ -177,7 +177,7 @@ void logfile::writeToLog(const char* text, const char* color, bool critical)
 				//if not write message to log that a string was limited to a certain amount of times
 				fprintf_s(log, "<p style=\"color:#FF0000;\">The following string has been limited due to too frequently usage: %s</p><br/>", text);
 
-				//force logfile to write information
+				//force log file to write information
 				fflush(log);
 
 				//set the write lock
@@ -222,7 +222,7 @@ void logfile::writeToLog(const char* text, const char* color, bool critical)
 	//end the html paragraph and add a line break
 	fprintf_s(log, "</p><br/>");
 
-	//force logfile to write information
+	//force log file to write information
 	fflush(log);
 }
 

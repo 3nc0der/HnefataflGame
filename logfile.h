@@ -2,15 +2,20 @@
 
 #include <Windows.h>
 #include <fstream>
-#include "singleton.hpp"
+#include "singleton.h"
 
 using namespace std;
 
-//max char buffer
-//needed for formatted text
-constexpr auto MAX_BUFFER = 1024;
+/// <summary>
+/// Needed for formatted text.
+/// The maximum buffer size.
+/// </summary>
+constexpr int MAX_BUFFER = 1024;
 
-//predefined colors
+/// <summary>
+/// Predefined colors of the log.
+/// For easier coloring of text.
+/// </summary>
 typedef enum class log_color
 {
 	BLACK = 0,
@@ -26,21 +31,40 @@ typedef enum class log_color
 
 #define LOG logfile::get()
 
-//logfile class, get an instance with the LOGFILE macro
+/// <summary>
+/// A log file class with multiple features.
+/// Receive an instance by using the <c>LOG</c>-macro.
+/// </summary>
 class logfile : public singleton<logfile>
 {
 public:
 
+	/// <summary>
+	/// Creates a new log file instance, but is called automatically by the singleton class.
+	/// </summary>
 	logfile();
+
 	~logfile();
 
-	//basic writetolog function
+	/// <summary>
+	/// The basic logging function.
+	/// </summary>
+	/// <param name="text">The string that will be written to the log.</param>
 	void writeToLog(const char* text);
 
-	//use one of the predefined colors
+	/// <summary>
+	/// Logs a text with color.
+	/// </summary>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="color">A member of the LOG_COLOR enum.</param>
 	void writeToLog(const char* text, log_color color);
 
-	//if the message is critical it will be visible in the log
+	/// <summary>
+	/// Adds a specially marked line to the log, as the message is critical and should be seen quickly.
+	/// </summary>
+	/// <param name="text">The string that will be written to the log.</param>
+	/// <param name="color">A member of the LOG_COLOR enum.</param>
+	/// <param name="critical">Set to true if the message is critical.</param>
 	void writeToLog(const char* text, log_color color, bool critical);
 
 	//give the wanted color like this "RGB" aka "FF00FF"
@@ -69,7 +93,7 @@ private:
 	//file variable
 	FILE *log;
 
-	//holds current logfile name
+	//holds current log file name
 	const char* logName = "logfile.html";
 
 	//holds the last string that was written to log
@@ -78,6 +102,6 @@ private:
 	//holds amount of last string written
 	int timesLastStringWritten = 0;
 
-	//tells wether the write lock is active or not
+	//tells whether the write lock is active or not
 	bool writeLock = false;
 };
