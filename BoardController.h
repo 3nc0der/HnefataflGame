@@ -26,11 +26,23 @@ public:
 	/// </summary>
 	void update();
 
+	/// <summary>
+	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
+	/// </summary>
+	/// <returns>The reseted board.</returns>
+	HnefataflBoard* undo();
+
 private:
 
 	/// <summary>
 	/// The instance of the game.
 	/// </summary>
 	HnefataflBoard *game;
+
+	/// <summary>
+	/// Every human move is added to the stack.
+	/// This is used to implement the undo functionality.
+	/// </summary>
+	stack<HnefataflBoard*> moveStack;
 };
 

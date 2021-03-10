@@ -17,7 +17,7 @@ Tile Piece::getPosition()
 	return tile;
 }
 
-const Color Piece::getColor()
+Color Piece::getColor()
 {
 	return color;
 }

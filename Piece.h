@@ -31,14 +31,14 @@ public:
 	/// Getter for the pieces color.
 	/// </summary>
 	/// <returns>The color of this piece.</returns>
-	virtual const Color getColor();
+	virtual Color getColor();
 
 private:
 
 	/// <summary>
 	/// The pieces color.
 	/// </summary>
-	const Color color;
+	Color color;
 
 	/// <summary>
 	/// The tile this piece is standing on at the moment.

@@ -48,12 +48,6 @@ public:
 	Board* machineMove();
 
 	/// <summary>
-	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
-	/// </summary>
-	/// <returns>The reseted board.</returns>
-	Board* undo();
-
-	/// <summary>
 	/// Sets the machine level to the given value.
 	/// This value describes how many moves the machine will calculate into the future.
 	/// </summary>
@@ -148,12 +142,6 @@ private:
 	/// The level of the machine. This is the maximum depth of the game tree, the machine uses to determine the best move.
 	/// </summary>
 	int machineLevel;
-
-	/// <summary>
-	/// Every human move is added to the stack.
-	/// This is used to implement the undo functionality.
-	/// </summary>
-	stack<Board> moveStack;
 
 	/// <summary>
 	/// The pieces the human controls.

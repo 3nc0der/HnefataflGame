@@ -32,12 +32,6 @@ public:
 	virtual Board* machineMove() = 0;
 
 	/// <summary>
-	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
-	/// </summary>
-	/// <returns>The reseted board.</returns>
-	virtual Board* undo() = 0;
-
-	/// <summary>
 	/// Sets the machine level to the given value.
 	/// This value describes how many moves the machine will calculate into the future.
 	/// </summary>

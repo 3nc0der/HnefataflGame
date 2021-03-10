@@ -16,7 +16,7 @@ protected:
 
 public:
 
-	virtual ~singletonInstance() {};
+	virtual ~singleton() {};
 
 	/// <summary>
 	/// Returns the one instance of the class if already existing.

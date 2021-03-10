@@ -6,17 +6,24 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::BLACK), machineColor(Color:
 	currentPlayer = Player::MACHINE;
 	nextPlayer = Player::HUMAN;
 	machineLevel = 3;
-	moveStack = stack<Board>();
 	humanPieces = list<Piece>();
 	machinePieces = list<Piece>();
 }
 
 HnefataflBoard::HnefataflBoard(HnefataflBoard& hb) : humanColor(hb.humanColor), machineColor(hb.machineColor)
 {
+	gameState = hb.gameState;
+	currentPlayer = hb.currentPlayer;
+	nextPlayer = hb.nextPlayer;
+	machineLevel = hb.machineLevel;
+	humanPieces = hb.humanPieces;
+	machinePieces = hb.machinePieces;
 }
 
 HnefataflBoard::~HnefataflBoard()
 {
+	humanPieces.clear();
+	machinePieces.clear();
 }
 
 Board* HnefataflBoard::move(Move move)
@@ -29,18 +36,14 @@ Board* HnefataflBoard::machineMove()
 	return nullptr;
 }
 
-Board* HnefataflBoard::undo()
-{
-	return nullptr;
-}
-
 void HnefataflBoard::setMachineDifficulty(int level)
 {
+	machineLevel = level;
 }
 
 int HnefataflBoard::getMachineDifficulty()
 {
-	return 0;
+	return machineLevel;
 }
 
 Player HnefataflBoard::getWinner()
@@ -55,39 +58,40 @@ bool HnefataflBoard::isOver()
 
 GameState HnefataflBoard::getGameState()
 {
-	return GameState();
+	return gameState;
 }
 
 void HnefataflBoard::setGameState(GameState gameState)
 {
+	this->gameState = gameState;
 }
 
 list<Piece>* HnefataflBoard::getMachinePieces()
 {
-	return nullptr;
+	return &machinePieces;
 }
 
 list<Piece>* HnefataflBoard::getHumanPieces()
 {
-	return nullptr;
+	return &humanPieces;
 }
 
 const Color HnefataflBoard::getMachineColor()
 {
-	return Color();
+	return machineColor;
 }
 
 const Color HnefataflBoard::getHumanColor()
 {
-	return Color();
+	return humanColor;
 }
 
 Player HnefataflBoard::getCurrentPlayer()
 {
-	return Player();
+	return currentPlayer;
 }
 
 Player HnefataflBoard::getNextPlayer()
 {
-	return Player();
+	return nextPlayer;
 }
