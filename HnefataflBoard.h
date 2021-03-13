@@ -123,6 +123,12 @@ public:
 private:
 
 	/// <summary>
+	/// The game board.
+	/// Each slot in the array represents one tile on the board.
+	/// </summary>
+	Tile gameBoard[SIZE][SIZE];
+
+	/// <summary>
 	/// The current state of the game.
 	/// </summary>
 	GameState gameState;
