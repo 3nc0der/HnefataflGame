@@ -13,7 +13,7 @@ public:
 
 private:
 
-	RESULT parseCommand();
+	RESULT parseCommand(std::string command);
 
 	RESULT moveCommand();
 
@@ -22,5 +22,7 @@ private:
 	RESULT levelCommand();
 
 	BoardController *controller;
+
+	bool running;
 };
 
