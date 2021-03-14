@@ -31,7 +31,7 @@ public:
 	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
 	/// </summary>
 	/// <returns>The reseted board.</returns>
-	HnefataflBoard* undo();
+	RESULT undo();
 
 private:
 

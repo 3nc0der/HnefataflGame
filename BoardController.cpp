@@ -24,11 +24,15 @@ void BoardController::update()
 {
 }
 
-HnefataflBoard* BoardController::undo()
+RESULT BoardController::undo()
 {
 	if (moveStack.size() > 1)
 	{
 		game = moveStack.top();
 		moveStack.pop();
+
+		return RESULT::OK;
 	}
+
+	return RESULT::ERROR;
 }

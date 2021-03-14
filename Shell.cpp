@@ -14,6 +14,7 @@ Shell::~Shell()
 RESULT Shell::execute()
 {
 	std::cout << controller.getBoardString() << std::endl;
+	return RESULT::OK;
 }
 
 RESULT Shell::parseCommand()

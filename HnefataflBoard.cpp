@@ -15,7 +15,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 	{
 		for (int j = 0; j < SIZE; j++)
 		{
-			gameBoard[i][j] = {i, j, Color::NONE, TileType::NORMAL};
+			gameBoard[i][j] = {static_cast<unsigned short>(i), static_cast<unsigned short>(j), Color::NONE, TileType::NORMAL};
 
 			if (i == j && i == (SIZE - 1) / 2)
 			{
