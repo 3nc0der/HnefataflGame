@@ -15,6 +15,11 @@ BoardController::~BoardController()
 	}
 }
 
+std::string BoardController::getBoardString()
+{
+	return game->toString();
+}
+
 void BoardController::update()
 {
 }

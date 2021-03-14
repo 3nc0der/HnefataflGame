@@ -22,9 +22,10 @@ public:
 	~BoardController();
 
 	/// <summary>
-	/// Implements what happens when the observed classes notify this observer.
+	/// Temporary function to print out the board.
 	/// </summary>
-	void update();
+	/// <returns>The board model as string.</returns>
+	std::string getBoardString();
 
 	/// <summary>
 	/// Resets the board to the state before the last human move. Leaves this board untouched as a new copy is created.
@@ -33,6 +34,11 @@ public:
 	HnefataflBoard* undo();
 
 private:
+
+	/// <summary>
+	/// Implements what happens when the observed classes notify this observer.
+	/// </summary>
+	void update();
 
 	/// <summary>
 	/// The instance of the game.

@@ -11,6 +11,8 @@ public:
 
 	RESULT execute();
 
+private:
+
 	RESULT parseCommand();
 
 	RESULT moveCommand();
@@ -18,5 +20,7 @@ public:
 	RESULT undoCommand();
 
 	RESULT levelCommand();
+
+	BoardController controller;
 };
 

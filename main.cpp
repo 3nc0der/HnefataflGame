@@ -6,5 +6,7 @@
 /// <returns>A windows error code.</returns>
 int main()
 {
-	return 0;
+	Shell game = Shell();
+
+	game.execute();
 }
