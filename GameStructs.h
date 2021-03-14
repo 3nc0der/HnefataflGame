@@ -63,7 +63,8 @@ struct Tile
 	unsigned short row, col;
 
 	/// <summary>
-	/// The color of this tile.
+	/// The color of the piece standing on this tile.
+	/// If the tile is not occupied at the moment, the color is set to NONE.
 	/// </summary>
 	Color tileColor;
 

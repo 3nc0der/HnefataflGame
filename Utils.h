@@ -3,7 +3,7 @@
 #include "ReturnCodes.h"
 #include "GameStructs.h"
 
-#define ABS(x) (if (x < 0) { -(x); } else { x; })
+#define ABS(x) {if (x < 0) { -(x); } else { x; }}
 
 /// <summary>
 /// A utility class which only consists out of static functions and has no members.

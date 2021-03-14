@@ -66,6 +66,12 @@
     <ClInclude Include="singleton.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Konakis.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Warrior.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp">
@@ -96,6 +102,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="GameStructs.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Konakis.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Warrior.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
