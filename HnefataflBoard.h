@@ -120,6 +120,8 @@ public:
 	/// <returns>The player who's turn it will be next turn.</returns>
 	Player getNextPlayer();
 
+	std::string toString();
+
 private:
 
 	/// <summary>

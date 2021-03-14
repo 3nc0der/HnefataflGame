@@ -78,14 +78,14 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				}
 				else if (j >= 3 && j <= 7)
 				{
-					gameBoard[i][j].tileColor = Color::WHITE;
-
 					if (j == 5)
 					{
+						gameBoard[i][j].tileColor = Color::KONAKIS;
 						humanPieces.push_back(Konakis());
 					}
 					else
 					{
+						gameBoard[i][j].tileColor = Color::WHITE;
 						humanPieces.push_back(Warrior());
 					}
 				}
@@ -220,4 +220,19 @@ Player HnefataflBoard::getCurrentPlayer()
 Player HnefataflBoard::getNextPlayer()
 {
 	return nextPlayer;
+}
+
+std::string HnefataflBoard::toString()
+{
+	std::string res = "";
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		for (int j = 0; j < SIZE; j++)
+		{
+			res += gameBoard[i][j].toString();
+		}
+	}
+
+	return res;
 }

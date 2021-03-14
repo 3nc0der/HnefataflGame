@@ -3,6 +3,8 @@
 #include "Color.h"
 #include "TileType.h"
 
+#include <string>
+
 /// <summary>
 /// The size of the game board in rows/columns.
 /// </summary>
@@ -72,4 +74,6 @@ struct Tile
 	/// The type of this tile.
 	/// </summary>
 	TileType tileType;
+
+	std::string toString();
 };

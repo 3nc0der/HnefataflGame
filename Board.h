@@ -103,4 +103,10 @@ public:
 	/// </summary>
 	/// <returns>The player who's turn it will be next turn.</returns>
 	virtual Player getNextPlayer() = 0;
+
+	/// <summary>
+	/// Builds a string to represent the board as a string.
+	/// </summary>
+	/// <returns>The board instance represented as a string.</returns>
+	virtual std::string toString() = 0;
 };

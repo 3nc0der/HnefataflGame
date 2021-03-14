@@ -33,3 +33,30 @@ unsigned short Move::getDistance()
 		return 0;
 	}
 }
+
+std::string Tile::toString()
+{
+	switch (tileColor)
+	{
+		case Color::NONE:
+		{
+			return " ";
+		}
+		case Color::WHITE:
+		{
+			return "W";
+		}
+		case Color::BLACK:
+		{
+			return "B";
+		}
+		case Color::KONAKIS:
+		{
+			return "K";
+		}
+		default:
+		{
+			return "#";
+		}
+	}
+}
