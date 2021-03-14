@@ -8,7 +8,7 @@
 /// <summary>
 /// The size of the game board in rows/columns.
 /// </summary>
-static const int SIZE = 11;
+static const int BOARD_SIZE = 11;
 
 struct Position
 {

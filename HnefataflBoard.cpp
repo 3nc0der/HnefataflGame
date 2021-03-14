@@ -11,17 +11,17 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 	humanPieces = list<Piece>();
 	machinePieces = list<Piece>();
 
-	for (int i = 0; i < SIZE; i++)
+	for (int i = 0; i < BOARD_SIZE; i++)
 	{
-		for (int j = 0; j < SIZE; j++)
+		for (int j = 0; j < BOARD_SIZE; j++)
 		{
 			gameBoard[i][j] = {static_cast<unsigned short>(i), static_cast<unsigned short>(j), Color::NONE, TileType::NORMAL};
 
-			if (i == j && i == (SIZE - 1) / 2)
+			if (i == j && i == (BOARD_SIZE - 1) / 2)
 			{
 				gameBoard[i][j].tileType = TileType::KONAKIS;
 			}
-			else if ((i == 0 && j == 0) || (i == 0 && j == SIZE - 1) || (i == SIZE - 1 && j == SIZE - 1) || (i == SIZE - 1 && j == 0))
+			else if ((i == 0 && j == 0) || (i == 0 && j == BOARD_SIZE - 1) || (i == BOARD_SIZE - 1 && j == BOARD_SIZE - 1) || (i == BOARD_SIZE - 1 && j == 0))
 			{
 				gameBoard[i][j].tileType = TileType::CORNER;
 			}
@@ -45,7 +45,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 			}
 			else if (i == 3)
 			{
-				if (j == 0 || j == SIZE - 1)
+				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].tileColor = Color::BLACK;
 					machinePieces.push_back(Warrior());
@@ -58,7 +58,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 			}
 			else if (i == 4)
 			{
-				if (j == 0 || j == SIZE - 1)
+				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].tileColor = Color::BLACK;
 					machinePieces.push_back(Warrior());
@@ -71,7 +71,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 			}
 			else if (i == 5)
 			{
-				if (j == 0 || j == SIZE - 1 || j == 1 || j == SIZE - 2)
+				if (j == 0 || j == BOARD_SIZE - 1 || j == 1 || j == BOARD_SIZE - 2)
 				{
 					gameBoard[i][j].tileColor = Color::BLACK;
 					machinePieces.push_back(Warrior());
@@ -92,7 +92,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 			}
 			else if (i == 6)
 			{
-				if (j == 0 || j == SIZE - 1)
+				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].tileColor = Color::BLACK;
 					machinePieces.push_back(Warrior());
@@ -105,7 +105,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 			}
 			else if (i == 7)
 			{
-				if (j == 0 || j == SIZE - 1)
+				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].tileColor = Color::BLACK;
 					machinePieces.push_back(Warrior());
@@ -226,12 +226,14 @@ std::string HnefataflBoard::toString()
 {
 	std::string res = "";
 
-	for (int i = 0; i < SIZE; i++)
+	for (int i = 0; i < BOARD_SIZE; i++)
 	{
-		for (int j = 0; j < SIZE; j++)
+		for (int j = 0; j < BOARD_SIZE; j++)
 		{
 			res += gameBoard[i][j].toString();
 		}
+
+		res += "\n";
 	}
 
 	return res;

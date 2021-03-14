@@ -120,6 +120,10 @@ public:
 	/// <returns>The player who's turn it will be next turn.</returns>
 	Player getNextPlayer();
 
+	/// <summary>
+	/// Creates a string to represent the board in text form.
+	/// </summary>
+	/// <returns>The string representing the board.</returns>
 	std::string toString();
 
 private:
@@ -128,7 +132,7 @@ private:
 	/// The game board.
 	/// Each slot in the array represents one tile on the board.
 	/// </summary>
-	Tile gameBoard[SIZE][SIZE];
+	Tile gameBoard[BOARD_SIZE][BOARD_SIZE];
 
 	/// <summary>
 	/// The current state of the game.

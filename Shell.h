@@ -21,6 +21,6 @@ private:
 
 	RESULT levelCommand();
 
-	BoardController controller;
+	BoardController *controller;
 };
 

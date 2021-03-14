@@ -2,6 +2,7 @@
 
 #include "ReturnCodes.h"
 #include "GameStructs.h"
+#include "logfile.h"
 
 #define ABS(x) {if (x < 0) { -(x); } else { x; }}
 

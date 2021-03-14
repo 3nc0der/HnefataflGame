@@ -14,7 +14,7 @@ typedef enum class ReturnCodes
 	/// <summary>
 	/// Return this if there is an internal error, that occurred in the program, without human input.
 	/// </summary>
-	ERROR = 1,
+	ERR = 1,
 
 	/// <summary>
 	/// Return this if the user aborted the command.

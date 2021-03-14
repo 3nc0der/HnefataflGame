@@ -4,16 +4,20 @@
 
 Shell::Shell()
 {
-	controller = BoardController();
+	LOG->writeToLog("New shell instance is created...", LOG_COLOR::GREEN);
+	controller = new BoardController();
 }
 
 Shell::~Shell()
 {
+	LOG->writeToLog("Shell instance is deleted...", LOG_COLOR::PURPLE);
+	delete controller;
 }
 
 RESULT Shell::execute()
 {
-	std::cout << controller.getBoardString() << std::endl;
+	LOG->writeToLog("Shell instance executes program.", LOG_COLOR::CYAN);
+	std::cout << controller->getBoardString() << std::endl;
 	return RESULT::OK;
 }
 
