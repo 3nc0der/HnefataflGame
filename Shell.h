@@ -15,11 +15,23 @@ private:
 
 	RESULT parseCommand(std::string command);
 
-	RESULT moveCommand();
+	RESULT moveCommand(std::vector<string> args);
 
 	RESULT undoCommand();
 
-	RESULT levelCommand();
+	RESULT levelCommand(std::vector<string> args);
+
+	RESULT printCommand();
+
+	RESULT switchCommand();
+
+	RESULT newCommand();
+
+	RESULT resetCommand();
+
+	void helpCommand();
+
+	void tutorialCommand();
 
 	BoardController *controller;
 
