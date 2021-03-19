@@ -34,9 +34,32 @@ unsigned short Move::getDistance()
 	}
 }
 
+Position Move::getDirection()
+{
+	if (colTo != colFrom)
+	{
+		return { 0, (colTo - colFrom) / getDistance() };
+	}
+	else if (rowTo != rowFrom)
+	{
+		return { (rowTo - rowFrom) / getDistance() , 0 };
+	}
+	else
+	{
+		return { 0, 0 };
+	}
+}
+
+Position Tile::getPosition()
+{
+	Position pos = { row, col };
+
+	return pos;
+}
+
 std::string Tile::toString()
 {
-	switch (tileColor)
+	switch (occupiedBy)
 	{
 		case Color::NONE:
 		{

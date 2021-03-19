@@ -129,6 +129,40 @@ public:
 private:
 
 	/// <summary>
+	/// Validates a given move in a way that if anything with the move is wrong, meaning the move can't be made, this function will fail to validate it.
+	/// </summary>
+	/// <param name="move">The move to validate.</param>
+	/// <returns>True if the move is valid, meaning it can be made on the board. False otherwise.</returns>
+	bool validateMove(Move move);
+
+	/// <summary>
+	/// Asserts a given move. Meaning that if the move is invalid due to a parameter being out of bounds this function asserts it.
+	/// </summary>
+	/// <param name="move">The move to assert.</param>
+	/// <returns>True if the move is invalid. False otherwise.</returns>
+	bool assertMove(Move move);
+
+	/// <summary>
+	/// Tells whether a given tile is empty or occupied.
+	/// </summary>
+	/// <param name="pos">The tiles position on the board.</param>
+	/// <returns>True if the tile is occupied with anything. False otherwise.</returns>
+	bool isTileOccupied(Position pos);
+
+	/// <summary>
+	/// Quick way to receive the current players color.
+	/// </summary>
+	/// <returns>The color of the current player.</returns>
+	Color getCurrentPlayersColor();
+
+	/// <summary>
+	/// Searches the current players piece list for a piece standing at the given position.
+	/// </summary>
+	/// <param name="pos">The position to search a piece at.</param>
+	/// <returns>The piece, if one was found at the position. A nullptr otherwise.</returns>
+	Piece* getCurrentPlayersPieceAt(Position pos);
+
+	/// <summary>
 	/// The game board.
 	/// Each slot in the array represents one tile on the board.
 	/// </summary>

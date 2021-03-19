@@ -19,6 +19,22 @@ struct Position
 };
 
 /// <summary>
+/// Overloads the equals operator for the Position struct.
+/// </summary>
+/// <param name="lhp">The left argument.</param>
+/// <param name="rhp">The right argument.</param>
+/// <returns>True if every member is equal, false otherwise.</returns>
+bool operator==(Position lhp, Position rhp)
+{
+	if (lhp.row == rhp.row && lhp.col == rhp.col)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+/// <summary>
 /// A struct for a single move.
 /// </summary>
 struct Move
@@ -52,6 +68,13 @@ struct Move
 	/// </summary>
 	/// <returns>The length of this move as single, positive value.</returns>
 	unsigned short getDistance();
+
+	/// <summary>
+	/// Gives a quick idea about in what direction the move is heading.
+	/// </summary>
+	/// <returns>A position, which can be interpreted so that the value 1 means the column/row is getting bigger and -1 means they're getting smaller.
+	/// Also only one member of the position will be set to something other than 0 as the pieces can't move diagonally.</returns>
+	Position getDirection();
 };
 
 /// <summary>
@@ -68,12 +91,22 @@ struct Tile
 	/// The color of the piece standing on this tile.
 	/// If the tile is not occupied at the moment, the color is set to NONE.
 	/// </summary>
-	Color tileColor;
+	Color occupiedBy;
 
 	/// <summary>
 	/// The type of this tile.
 	/// </summary>
 	TileType tileType;
 
+	/// <summary>
+	/// Packs the row and col member of the tile into a Position instance.
+	/// </summary>
+	/// <returns>The position of the tile as instance of the Position struct.</returns>
+	Position getPosition();
+
+	/// <summary>
+	/// Converts the tile into a string for better readability.
+	/// </summary>
+	/// <returns>A string representation of the tile.</returns>
 	std::string toString();
 };
