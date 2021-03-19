@@ -124,12 +124,38 @@ RESULT Shell::moveCommand(std::vector<string> args)
 	}
 	else if (args.size() < 4)
 	{
+		LOG->writeToLog("Too few arguments found.", LOG_COLOR::YELLOW);
+		std::cout << "Too few arguments found." << std::endl;
+		return RESULT::INVALID_ARGUMENT;
+	}
+	else if (args.size() > 4)
+	{
+		LOG->writeToLog("Too many arguments found.", LOG_COLOR::YELLOW);
+		std::cout << "Too many arguments found." << std::endl;
+		return RESULT::INVALID_ARGUMENT;
+	}
+	
+	Move move{};
 
+	for (size_t i = 0; i < args.size(); i++)
+	{
+		for (size_t j = 0; j < args[i].size(); j++)
+		{
+			if (!isdigit(args[i][j]))
+			{
+				LOG->writeToLog("Number expected.", LOG_COLOR::YELLOW);
+				std::cout << "Number expected." << std::endl;
+				return RESULT::INVALID_ARGUMENT;
+			}
+		}
 	}
 
-	std::cout << "Move command called." << std::endl;
+	move.rowFrom = static_cast<unsigned short>(atoi(args[0].c_str()));
+	move.colFrom = static_cast<unsigned short>(atoi(args[1].c_str()));
+	move.rowTo = static_cast<unsigned short>(atoi(args[2].c_str()));
+	move.colTo = static_cast<unsigned short>(atoi(args[3].c_str()));
 
-	return RESULT::OK;
+	return controller->move(move);
 }
 
 RESULT Shell::undoCommand()

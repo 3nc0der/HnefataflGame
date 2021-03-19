@@ -33,6 +33,13 @@ public:
 	/// <returns>The reseted board.</returns>
 	RESULT undo();
 
+	/// <summary>
+	/// Temporary move function to make a move from inputs in the shell.
+	/// </summary>
+	/// <param name="move">The move that will be executed on the board if valid.</param>
+	/// <returns>An instance of the Move struct.</returns>
+	RESULT move(Move move);
+
 private:
 
 	/// <summary>

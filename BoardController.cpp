@@ -5,6 +5,7 @@ BoardController::BoardController()
 	LOG->writeToLog("New controller instance is created...", LOG_COLOR::GREEN);
 	moveStack = stack<HnefataflBoard*>();
 	game = new HnefataflBoard();
+	game->addObserver(*this);
 }
 
 BoardController::~BoardController()
@@ -29,6 +30,7 @@ std::string BoardController::getBoardString()
 
 void BoardController::update()
 {
+	LOG->writeToLog("Update function was called.", LOG_COLOR::PURPLE);
 }
 
 RESULT BoardController::undo()
@@ -42,4 +44,14 @@ RESULT BoardController::undo()
 	}
 
 	return RESULT::ERR;
+}
+
+RESULT BoardController::move(Move move)
+{
+	game->move(move);
+
+	if (game != nullptr)
+	{
+		game->notifyObserver();
+	}
 }
