@@ -1,6 +1,4 @@
 #include "HnefataflBoard.h"
-#include "Warrior.h"
-#include "Konakis.h"
 
 HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color::BLACK)
 {
@@ -32,7 +30,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j >= 3 && j <= 7)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 			}
 			else if (i == 1)
@@ -40,7 +38,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 5)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 			}
 			else if (i == 3)
@@ -48,12 +46,12 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 				else if (j == 5)
 				{
 					gameBoard[i][j].occupiedBy = Color::WHITE;
-					humanPieces.push_back(Warrior());
+					humanPieces.push_back(Piece());
 				}
 			}
 			else if (i == 4)
@@ -61,12 +59,12 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 				else if (j >= 4 && j <= 6)
 				{
 					gameBoard[i][j].occupiedBy = Color::WHITE;
-					humanPieces.push_back(Warrior());
+					humanPieces.push_back(Piece());
 				}
 			}
 			else if (i == 5)
@@ -74,19 +72,20 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 0 || j == BOARD_SIZE - 1 || j == 1 || j == BOARD_SIZE - 2)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 				else if (j >= 3 && j <= 7)
 				{
 					if (j == 5)
 					{
-						gameBoard[i][j].occupiedBy = Color::KONAKIS;
-						humanPieces.push_back(Konakis());
+						//Konakis is added here
+						gameBoard[i][j].occupiedBy = Color::WHITE;
+						humanPieces.push_back(Piece());
 					}
 					else
 					{
 						gameBoard[i][j].occupiedBy = Color::WHITE;
-						humanPieces.push_back(Warrior());
+						humanPieces.push_back(Piece());
 					}
 				}
 			}
@@ -95,12 +94,12 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 				else if (j >= 4 && j <= 6)
 				{
 					gameBoard[i][j].occupiedBy = Color::WHITE;
-					humanPieces.push_back(Warrior());
+					humanPieces.push_back(Piece());
 				}
 			}
 			else if (i == 7)
@@ -108,12 +107,12 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 0 || j == BOARD_SIZE - 1)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 				else if (j == 5)
 				{
 					gameBoard[i][j].occupiedBy = Color::WHITE;
-					humanPieces.push_back(Warrior());
+					humanPieces.push_back(Piece());
 				}
 			}
 			else if (i == 9)
@@ -121,7 +120,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j == 5)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 			}
 			else if (i == 10)
@@ -129,7 +128,7 @@ HnefataflBoard::HnefataflBoard() : humanColor(Color::WHITE), machineColor(Color:
 				if (j >= 3 && j <= 7)
 				{
 					gameBoard[i][j].occupiedBy = Color::BLACK;
-					machinePieces.push_back(Warrior());
+					machinePieces.push_back(Piece());
 				}
 			}
 		}
@@ -251,7 +250,6 @@ bool HnefataflBoard::validateMove(Move move)
 		return false;
 	}
 
-	// TODO: remove the konakis color again and also the extra classes for konakis and warrior.
 	if (gameBoard[move.getSource().row][move.getSource().col].occupiedBy != getCurrentPlayersColor())
 	{
 		return false;
@@ -261,7 +259,13 @@ bool HnefataflBoard::validateMove(Move move)
 		return false;
 	}
 	
-	// TODO: add the check for konakis and corner tiles on normal pieces' destination.
+	if (!getCurrentPlayersPieceAt(move.getSource())->getIsKonakis())
+	{
+		if (getTileAt(move.getDestination()).tileType != TileType::NORMAL)
+		{
+			return false;
+		}
+	}
 
 	Position dir = move.getDirection();
 
@@ -272,6 +276,8 @@ bool HnefataflBoard::validateMove(Move move)
 			return false;
 		}
 	}
+
+	return true;
 }
 
 bool HnefataflBoard::assertMove(Move move)
@@ -363,5 +369,17 @@ Piece* HnefataflBoard::getCurrentPlayersPieceAt(Position pos)
 		{
 			return nullptr;
 		}
+	}
+}
+
+Tile HnefataflBoard::getTileAt(Position pos)
+{
+	if (pos.row >= BOARD_SIZE || pos.row < 0 || pos.col >= BOARD_SIZE || pos.col < 0)
+	{
+		return Tile();
+	}
+	else
+	{
+		return gameBoard[pos.row][pos.col];
 	}
 }

@@ -25,5 +25,10 @@ typedef enum class ReturnCodes
 	/// Return this if there is an error because of an invalid parameter.
 	/// Doesn't mean the user is responsible for the invalid argument.
 	/// </summary>
-	INVALID_ARGUMENT = 3
+	INVALID_ARGUMENT = 3,
+
+	/// <summary>
+	/// The return code if a player wanted to make an illegal move.
+	/// </summary>
+	ILLEGAL_MOVE = 4
 }RESULT;

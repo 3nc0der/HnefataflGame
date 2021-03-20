@@ -16,11 +16,6 @@ enum class Color
 	BLACK,
 
 	/// <summary>
-	/// The color of the king piece.
-	/// </summary>
-	KONAKIS,
-
-	/// <summary>
 	/// Used to describe no color, meaning an empty tile.
 	/// </summary>
 	NONE

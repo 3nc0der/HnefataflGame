@@ -38,11 +38,11 @@ Position Move::getDirection()
 {
 	if (colTo != colFrom)
 	{
-		return { 0, (colTo - colFrom) / getDistance() };
+		return { 0, static_cast<unsigned short>((colTo - colFrom) / getDistance()) };
 	}
 	else if (rowTo != rowFrom)
 	{
-		return { (rowTo - rowFrom) / getDistance() , 0 };
+		return { static_cast<unsigned short>((rowTo - rowFrom) / getDistance()) , 0 };
 	}
 	else
 	{
@@ -73,6 +73,7 @@ std::string Tile::toString()
 		{
 			return "B";
 		}
+		// TODO: add a piece type enum and remove the isKonakis member from piece.
 		case Color::KONAKIS:
 		{
 			return "K";

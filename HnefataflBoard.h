@@ -163,6 +163,14 @@ private:
 	Piece* getCurrentPlayersPieceAt(Position pos);
 
 	/// <summary>
+	/// Asserts the given position and takes the tile at the position from the gameBoard array.
+	/// Basically an easy access function for the gameBoard array.
+	/// </summary>
+	/// <param name="pos">The position the wanted tile sits at.</param>
+	/// <returns>The tile at the given position from the gameBoard array.</returns>
+	Tile getTileAt(Position pos);
+
+	/// <summary>
 	/// The game board.
 	/// Each slot in the array represents one tile on the board.
 	/// </summary>

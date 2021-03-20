@@ -145,7 +145,6 @@
     <ClInclude Include="BoardController.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="GameStructs.h" />
-    <ClInclude Include="Konakis.h" />
     <ClInclude Include="logfile.h" />
     <ClInclude Include="Observable.h" />
     <ClInclude Include="Observer.h" />
@@ -159,13 +158,11 @@
     <ClInclude Include="singleton.h" />
     <ClInclude Include="TileType.h" />
     <ClInclude Include="Utils.h" />
-    <ClInclude Include="Warrior.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BoardController.cpp" />
     <ClCompile Include="GameStructs.cpp" />
     <ClCompile Include="HnefataflBoard.cpp" />
-    <ClCompile Include="Konakis.cpp" />
     <ClCompile Include="logfile.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Observable.cpp" />
@@ -173,7 +170,6 @@
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Shell.cpp" />
     <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Warrior.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

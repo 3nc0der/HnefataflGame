@@ -19,21 +19,33 @@ public:
 	/// </summary>
 	/// <param name="dest">The tile this piece shall move to.</param>
 	/// <returns>A member of the ReturnCode enum.</returns>
-	virtual RESULT moveTo(Tile dest);
+	RESULT moveTo(Tile &dest);
 
 	/// <summary>
 	/// Getter for the tile this piece is standing on.
 	/// </summary>
 	/// <returns>The tile this piece keeps occupied at the moment.</returns>
-	virtual Tile getPosition();
+	Tile getPosition();
 
 	/// <summary>
 	/// Getter for the pieces color.
 	/// </summary>
 	/// <returns>The color of this piece.</returns>
-	virtual Color getColor();
+	Color getColor();
+
+	/// <summary>
+	/// Getter for the <c>isKonakis</c> member.
+	/// </summary>
+	/// <returns>True if the piece is the konakis, false otherwise.</returns>
+	bool getIsKonakis();
 
 private:
+
+	/// <summary>
+	/// This member tells whether this piece is the konakis piece or not.
+	/// Due to the fact that there's only one konakis piece, this may only be true for one piece only.
+	/// </summary>
+	bool isKonakis;
 
 	/// <summary>
 	/// The pieces color.
